@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920, height=1080">
+  <title>Flujo Físico de Exportación y Packing List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fira+Code:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-mono { font-family: 'Fira Code', monospace; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-800 w-[1920px] h-[1080px] p-8 flex items-center justify-center overflow-hidden">
+  <div class="w-full h-full bg-white rounded-3xl shadow-2xl p-12 flex flex-col justify-between border-4 border-slate-800/20 relative">
+    
+    <!-- Encabezado de Diapositiva -->
+    <div>
+      <span class="text-sm font-extrabold uppercase tracking-wider text-[#059669] block mb-1">
+        BLOQUE 2 • DEL MUNDO REAL AL CÓDIGO JAVA
+      </span>
+      <h2 class="text-4xl font-black text-[#004D33]">
+        Flujo Físico de Exportación y Packing List en Terminal Marítimo
+      </h2>
+      <div class="w-full h-1.5 bg-emerald-200 mt-3 mb-2 rounded-full"></div>
+    </div>
+
+    <!-- Contenido en Dos Columnas -->
+    <div class="grid grid-cols-12 gap-8 my-auto items-center">
+      
+      <!-- Columna Izquierda: Imagen del Flujo Físico Real -->
+      <div class="col-span-7 bg-slate-900 rounded-2xl overflow-hidden border-2 border-emerald-500 shadow-xl flex items-center justify-center p-2">
+        <img id="img-flujo" src="flujo_exportacion.jpg" alt="Flujo Físico de Exportación y Packing List" class="w-full h-auto max-h-[580px] object-contain rounded-xl">
+      </div>
+
+      <!-- Columna Derecha: Objetos en Java con Validaciones -->
+      <div class="col-span-5 space-y-3.5 text-xs sm:text-sm">
+        <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-slate-700 leading-snug">
+          <strong class="text-emerald-950 text-base block mb-1">¿Cómo funciona físicamente en la planta?</strong>
+          La logística internacional de despacho marítimo se modela en <strong>Objetos en Java</strong> con reglas temporales de trazabilidad y calidad:
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-slate-50 border-l-4 border-sky-600 shadow-sm">
+          <strong class="text-sky-900 font-bold block mb-0.5">1. Vendedor / Ejecutivo Comercial:</strong>
+          El responsable de ventas internacionales genera el <em>Packing List</em> de exportación asignando el <em>país de destino</em> y el <em>cliente</em> consignatario.
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-slate-50 border-l-4 border-indigo-600 shadow-sm">
+          <strong class="text-indigo-900 font-bold block mb-0.5">2. Formulario de Packing List:</strong>
+          Objeto que agrupa los metadatos de comercio exterior: <em>fecha de exportación</em>, <em>fecha de producción</em>, código de <em>lote</em> y detalle de pallets estibados.
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-slate-50 border-l-4 border-amber-500 shadow-sm">
+          <strong class="text-amber-900 font-bold block mb-0.5">3. Validación Temporal de Antigüedad:</strong>
+          Cálculo del tiempo transcurrido entre la <em>fecha de producción</em> y la <em>fecha de exportación</em> para garantizar frescura y estándares sanitarios de destino.
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-slate-50 border-l-4 border-blue-600 shadow-sm">
+          <strong class="text-blue-900 font-bold block mb-0.5">4. Escala de Calidad Temporal:</strong>
+          Si la antigüedad es <strong>menor a 1 mes</strong>: se marca como <strong class="text-emerald-700">ProductoOK</strong>; entre <strong>1 y 2 meses</strong>: se califica como <strong class="text-amber-700">Producto en Observación</strong>; y si es <strong>mayor a 2 meses</strong>: se debe <strong>Rechazar</strong>.
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-slate-50 border-l-4 border-emerald-600 shadow-sm">
+          <strong class="text-emerald-900 font-bold block mb-0.5">5. Cierre de Packing List y Despacho:</strong>
+          Al consolidar el contenedor reefer (-20°C), el resumen final detalla cuánto producto fue <strong>ProductoOK</strong> y cuánto <strong>Producto en Observación</strong> apto para zarpe.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Barra Inferior Informativa -->
+    <div class="flex items-center justify-between text-xs text-slate-500 border-t border-slate-200 pt-3">
+      <span>Observa cómo cada objeto del mundo físico conserva su responsabilidad única antes de pasar al código fuente.</span>
+      <span class="font-mono font-bold text-[#004D33]">De la Planta al IDE ➔</span>
+    </div>
+
+  </div>
+</body>
+</html>

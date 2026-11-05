@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadena de Valor Industrial: Planta Atunera — Especificaciones de Dominio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fira+Code:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-mono { font-family: 'Fira Code', monospace; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen p-4 sm:p-8">
+  <div class="max-w-6xl mx-auto space-y-6">
+
+    <!-- ENCABEZADO PRINCIPAL -->
+    <header class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <span class="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-700/60 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-2">
+            <span>🏭</span>
+            <span>ESPAM MFL • Carrera de Desarrollo de Software</span>
+          </span>
+          <h1 class="text-2xl sm:text-3xl font-black text-white">
+            Planta Procesadora y Exportadora de Atún: Cadena de Valor Unificada
+          </h1>
+          <p class="text-slate-300 text-sm mt-1">
+            Documento de especificaciones técnicas para el modelado de la jerarquía de herencia en Java (<code class="text-emerald-400 font-mono">EtapaProceso</code> y sus 5 subclases).
+          </p>
+        </div>
+        <div class="shrink-0 bg-slate-950 border border-slate-800 rounded-xl p-3 text-center">
+          <p class="text-[11px] text-slate-400 uppercase font-semibold">Taller de Herencia</p>
+          <p class="text-lg font-black text-emerald-400">Clase 10 (U2)</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAPA VISUAL DE LA CADENA DE VALOR -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-3 text-xs">
+      <!-- FASE 1 -->
+      <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 flex flex-col justify-between hover:border-emerald-500/50 transition">
+        <div>
+          <span class="w-7 h-7 rounded-lg bg-emerald-950 text-emerald-400 border border-emerald-800 flex items-center justify-center font-bold mb-2">1</span>
+          <h2 class="font-bold text-white text-sm mb-1">Recepción Muelle</h2>
+          <p class="text-slate-300 text-[11px] mb-2">Descarga de pesca desde el barco y pesaje en tolva.</p>
+          <div class="text-[10px] text-slate-400 space-y-1">
+            <p><strong>Subclase:</strong> <code class="text-emerald-300">RecepcionMuelle</code></p>
+            <p><strong>Invariante:</strong> Peso Neto = Bruto - Tara &gt; 0 kg</p>
+          </div>
+        </div>
+        <a href="flujo_recepcion_pesca.jpg" target="_blank" class="mt-3 block text-center py-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-300 text-[11px] font-semibold transition">
+          Ver Diagrama 🖼️
+        </a>
+      </div>
+
+      <!-- FASE 2 -->
+      <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 flex flex-col justify-between hover:border-sky-500/50 transition">
+        <div>
+          <span class="w-7 h-7 rounded-lg bg-sky-950 text-sky-400 border border-sky-800 flex items-center justify-center font-bold mb-2">2</span>
+          <h2 class="font-bold text-white text-sm mb-1">Control Calidad</h2>
+          <p class="text-slate-300 text-[11px] mb-2">Muestreo térmico con sonda digital en espécimen.</p>
+          <div class="text-[10px] text-slate-400 space-y-1">
+            <p><strong>Subclase:</strong> <code class="text-sky-300">ControlCalidad</code></p>
+            <p><strong>Invariante:</strong> Temp &le; 4.0 °C (Apto vs No Apto)</p>
+          </div>
+        </div>
+        <div class="mt-3 flex gap-1">
+          <a href="flujo_calidad.jpg" target="_blank" class="flex-1 text-center py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-300 text-[11px] font-semibold transition">
+            Foto 🖼️
+          </a>
+          <a href="slide_calidad.html" target="_blank" class="flex-1 text-center py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-300 text-[11px] font-semibold transition">
+            Slide 📄
+          </a>
+        </div>
+      </div>
+
+      <!-- FASE 3 -->
+      <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 flex flex-col justify-between hover:border-indigo-500/50 transition">
+        <div>
+          <span class="w-7 h-7 rounded-lg bg-indigo-950 text-indigo-400 border border-indigo-800 flex items-center justify-center font-bold mb-2">3</span>
+          <h2 class="font-bold text-white text-sm mb-1">Producción Fileteo</h2>
+          <p class="text-slate-300 text-[11px] mb-2">Corte, limpieza y obtención de lomos limpios.</p>
+          <div class="text-[10px] text-slate-400 space-y-1">
+            <p><strong>Subclase:</strong> <code class="text-indigo-300">ProduccionFileteo</code></p>
+            <p><strong>Invariante:</strong> Rendimiento 45% - 51%</p>
+          </div>
+        </div>
+        <div class="mt-3 flex gap-1">
+          <a href="flujo_produccion.jpg" target="_blank" class="flex-1 text-center py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-indigo-300 text-[11px] font-semibold transition">
+            Foto 🖼️
+          </a>
+          <a href="slide_produccion.html" target="_blank" class="flex-1 text-center py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-indigo-300 text-[11px] font-semibold transition">
+            Slide 📄
+          </a>
+        </div>
+      </div>
+
+      <!-- FASE 4 -->
+      <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 flex flex-col justify-between hover:border-blue-500/50 transition">
+        <div>
+          <span class="w-7 h-7 rounded-lg bg-blue-950 text-blue-400 border border-blue-800 flex items-center justify-center font-bold mb-2">4</span>
+          <h2 class="font-bold text-white text-sm mb-1">Bodega y Frío</h2>
+          <p class="text-slate-300 text-[11px] mb-2">Almacenamiento en tinas en cámara sub-cero.</p>
+          <div class="text-[10px] text-slate-400 space-y-1">
+            <p><strong>Subclase:</strong> <code class="text-blue-300">AlmacenamientoBodega</code></p>
+            <p><strong>Invariante:</strong> Tina 600 - 605 kg a &le; -18 °C</p>
+          </div>
+        </div>
+        <div class="mt-3 flex gap-1">
+          <a href="flujo_bodega.jpg" target="_blank" class="flex-1 text-center py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-blue-300 text-[11px] font-semibold transition">
+            Foto 🖼️
+          </a>
+          <a href="slide_bodega.html" target="_blank" class="flex-1 text-center py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-blue-300 text-[11px] font-semibold transition">
+            Slide 📄
+          </a>
+        </div>
+      </div>
+
+      <!-- FASE 5 -->
+      <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 flex flex-col justify-between hover:border-teal-500/50 transition">
+        <div>
+          <span class="w-7 h-7 rounded-lg bg-teal-950 text-teal-400 border border-teal-800 flex items-center justify-center font-bold mb-2">5</span>
+          <h2 class="font-bold text-white text-sm mb-1">Exportación</h2>
+          <p class="text-slate-300 text-[11px] mb-2">Packing list y despacho en contenedor reefer.</p>
+          <div class="text-[10px] text-slate-400 space-y-1">
+            <p><strong>Subclase:</strong> <code class="text-teal-300">DespachoExportacion</code></p>
+            <p><strong>Invariante:</strong> Antigüedad &lt; 1 mes (Apto)</p>
+          </div>
+        </div>
+        <div class="mt-3 flex gap-1">
+          <a href="flujo_exportacion.jpg" target="_blank" class="flex-1 text-center py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-teal-300 text-[11px] font-semibold transition">
+            Foto 🖼️
+          </a>
+          <a href="slide_exportacion.html" target="_blank" class="flex-1 text-center py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-teal-300 text-[11px] font-semibold transition">
+            Slide 📄
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESPECIFICACIÓN DETALLADA DE CLASES -->
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
+      <h2 class="text-lg font-bold text-white flex items-center space-x-2">
+        <span>⚙️</span>
+        <span>Estructura de la Jerarquía de Herencia en Java</span>
+      </h2>
+
+      <div class="space-y-4 text-xs leading-relaxed text-slate-300">
+        <!-- SUPERCLASE -->
+        <div class="bg-slate-950 border border-emerald-800/60 rounded-xl p-4">
+          <h3 class="text-sm font-bold text-emerald-400 mb-2 font-mono">1. Superclase: public class EtapaProceso</h3>
+          <p class="mb-2">Contiene los datos comunes a toda etapa operativa y define el contrato de métodos que cada subclase especializará:</p>
+          <ul class="list-disc list-inside space-y-1 text-slate-300 ml-2">
+            <li><code class="text-emerald-300">protected String codigoLote</code>: Identificador del lote (ej: "LOTE-2026-001").</li>
+            <li><code class="text-emerald-300">protected String fecha</code>: Fecha u hora de ejecución (ej: "04/11/2026").</li>
+            <li><code class="text-emerald-300">protected String responsable</code>: Nombre del operador responsable (ej: "Carlos Mendoza").</li>
+            <li><code class="text-emerald-300">protected String nombreEtapa</code>: Nombre legible de la etapa (ej: "Control de Calidad").</li>
+            <li><code class="text-emerald-300">public boolean validarInvariante()</code>: Retorna verdadero o falso según las reglas de cada subclase.</li>
+            <li><code class="text-emerald-300">public void mostrarResumen()</code>: Imprime en consola en una sola línea el estado de la etapa.</li>
+          </ul>
+        </div>
+
+        <!-- SUBCLASES -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div class="bg-slate-950 border border-slate-800 rounded-xl p-3.5">
+            <h4 class="font-bold text-white text-xs mb-1 font-mono text-emerald-300">public class RecepcionMuelle extends EtapaProceso</h4>
+            <p class="text-slate-400 text-[11px] mb-1.5">Atributos propios: <code class="text-slate-200">nombreBarco</code>, <code class="text-slate-200">pesoBruto</code>, <code class="text-slate-200">taraCamion</code>.</p>
+            <p class="text-slate-300 text-[11px]">Constructor invoca <code class="text-emerald-400 font-mono">super(...)</code>. Sobreescribe <code class="text-emerald-400 font-mono">validarInvariante()</code> retornando true si el peso bruto es mayor a la tara y el peso neto es positivo.</p>
+          </div>
+
+          <div class="bg-slate-950 border border-slate-800 rounded-xl p-3.5">
+            <h4 class="font-bold text-white text-xs mb-1 font-mono text-sky-300">public class ControlCalidad extends EtapaProceso</h4>
+            <p class="text-slate-400 text-[11px] mb-1.5">Atributos propios: <code class="text-slate-200">temperaturaMuestra</code>, <code class="text-slate-200">codigoSonda</code>.</p>
+            <p class="text-slate-300 text-[11px]">Constructor invoca <code class="text-sky-400 font-mono">super(...)</code>. Sobreescribe <code class="text-sky-400 font-mono">validarInvariante()</code>: retorna true únicamente si la temperatura interna es &le; 4.0 °C.</p>
+          </div>
+
+          <div class="bg-slate-950 border border-slate-800 rounded-xl p-3.5">
+            <h4 class="font-bold text-white text-xs mb-1 font-mono text-indigo-300">public class ProduccionFileteo extends EtapaProceso</h4>
+            <p class="text-slate-400 text-[11px] mb-1.5">Atributos propios: <code class="text-slate-200">pesoInicial</code>, <code class="text-slate-200">pesoLomos</code>, <code class="text-slate-200">pesoMerma</code>.</p>
+            <p class="text-slate-300 text-[11px]">Constructor invoca <code class="text-indigo-400 font-mono">super(...)</code>. Valida que el rendimiento de lomos (<code class="text-slate-200">(pesoLomos / pesoInicial) * 100</code>) se ubique en el rango óptimo de 45.0% a 51.0%.</p>
+          </div>
+
+          <div class="bg-slate-950 border border-slate-800 rounded-xl p-3.5">
+            <h4 class="font-bold text-white text-xs mb-1 font-mono text-blue-300">public class AlmacenamientoBodega extends EtapaProceso</h4>
+            <p class="text-slate-400 text-[11px] mb-1.5">Atributos propios: <code class="text-slate-200">codigoTina</code>, <code class="text-slate-200">pesoTinaKg</code>, <code class="text-slate-200">temperaturaCamara</code>.</p>
+            <p class="text-slate-300 text-[11px]">Constructor invoca <code class="text-blue-400 font-mono">super(...)</code>. Valida que la tina pese entre 600.0 y 605.0 kg y la cámara de frío opere a &le; -18.0 °C.</p>
+          </div>
+
+          <div class="bg-slate-950 border border-slate-800 rounded-xl p-3.5 md:col-span-2">
+            <h4 class="font-bold text-white text-xs mb-1 font-mono text-teal-300">public class DespachoExportacion extends EtapaProceso</h4>
+            <p class="text-slate-400 text-[11px] mb-1.5">Atributos propios: <code class="text-slate-200">codigoContenedor</code>, <code class="text-slate-200">antiguedadMeses</code>, <code class="text-slate-200">paisDestino</code>.</p>
+            <p class="text-slate-300 text-[11px]">Constructor invoca <code class="text-teal-400 font-mono">super(...)</code>. Valida que la antigüedad del lote sea estrictamente menor a 1.0 mes para ser apto de exportación inmediata.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIE INSTITUCIONAL -->
+    <footer class="text-center text-xs text-slate-500 py-3">
+      ESPAM MFL • Carrera de Desarrollo de Software • Asignatura: Programación Orientada a Objetos • Semestre 2026
+    </footer>
+
+  </div>
+</body>
+</html>
